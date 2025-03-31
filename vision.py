@@ -1,7 +1,7 @@
 from google.cloud import vision
 import io
-client=vision.ImageAnnotatorClient.from_service_account_file('API_key.json')
-image_path="car3.png"
+client=vision.ImageAnnotatorClient.from_service_account_file('YOUR_API_key')
+image_path="YourImage.png"
 
 with io.open(image_path,'rb') as image_file:
     content= image_file.read()
