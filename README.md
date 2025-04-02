@@ -1,5 +1,3 @@
-This is image detection project using Google Cloud vision API
-<br>
 # Google Cloud Vision API Image Label Detection
 
 ## Overview
@@ -38,31 +36,6 @@ $env:GOOGLE_APPLICATION_CREDENTIALS="path/to/gcp_key.json"
 python script.py
 ```
 
-### Sample Code (`script.py`)
-```python
-from google.cloud import vision
-import io
-
-# Initialize the Vision API client
-client = vision.ImageAnnotatorClient.from_service_account_file('gcp_key.json')
-
-# Load image
-image_path = "car2.png"
-with io.open(image_path, 'rb') as image_file:
-    content = image_file.read()
-
-# Create an image object for Vision API
-image = vision.Image(content=content)
-
-# Perform label detection
-response = client.label_detection(image=image)
-labels = response.label_annotations
-
-# Print detected labels and confidence scores
-for label in labels:
-    print(f"{label.description}: {label.score:.2f}")
-```
-
 ## Expected Output
 For an image of a car (`car2.png`), the output might look like:
 ```
@@ -85,6 +58,7 @@ Ensure `gcp_key.json` is correctly configured and accessible.
 This project is licensed under the **MIT License**.
 
 ## Author
-Kowshik ch
+Kowshik Ch
+
 
 
